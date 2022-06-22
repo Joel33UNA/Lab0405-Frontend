@@ -4,6 +4,9 @@
             android:id="@+id/nav_home"
             android:title="Principal"/>
     <item
+            android:id="@+id/nav_informacion"
+            android:title="Información"/>
+    <item
             android:id="@+id/nav_ciclos"
             android:title="Ciclos"/>
     <item

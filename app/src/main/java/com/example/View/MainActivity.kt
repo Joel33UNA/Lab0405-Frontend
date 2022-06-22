@@ -50,6 +50,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 changeFragment(HomeFragment())
                 setToolbarTitle("Bienvenido(a)")
             }
+            R.id.nav_informacion -> {
+                changeFragment(InformacionFragment())
+                setToolbarTitle("Información")
+            }
             R.id.nav_ciclos -> {
                 changeFragment(CiclosFragment())
                 setToolbarTitle("Ciclos")
@@ -58,13 +62,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 changeFragment(CarrerasFragment())
                 setToolbarTitle("Carreras")
             }
+            R.id.nav_cursos -> {
+                changeFragment(CursosFragment())
+                setToolbarTitle("Cursos")
+            }
             R.id.nav_estudiantes -> {
                 changeFragment(EstudiantesFragment())
                 setToolbarTitle("Estudiantes")
             }
-            R.id.nav_cursos -> {
-                changeFragment(CursosFragment())
-                setToolbarTitle("Cursos")
+            R.id.nav_profesores -> {
+                changeFragment(ProfesoresFragment())
+                setToolbarTitle("Profesores")
+            }
+            R.id.grupos_a_cargo -> {
+                changeFragment(MatriculasFragment())
+                setToolbarTitle("Matriculas")
             }
             R.id.nav_logout -> {
                 val i = Intent(this, LoginActivity::class.java)
@@ -81,6 +93,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         var nav_menu = navigationView.menu
         if(usuario.rol == "administrador"){
             nav_menu.findItem(R.id.nav_home).isVisible = true
+            nav_menu.findItem(R.id.nav_informacion).isVisible = false
             nav_menu.findItem(R.id.nav_ciclos).isVisible = true
             nav_menu.findItem(R.id.nav_carreras).isVisible = true
             nav_menu.findItem(R.id.nav_cursos).isVisible = true
@@ -92,6 +105,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         else if(usuario.rol == "profesor"){
             nav_menu.findItem(R.id.nav_home).isVisible = false
+            nav_menu.findItem(R.id.nav_informacion).isVisible = true
             nav_menu.findItem(R.id.nav_ciclos).isVisible = false
             nav_menu.findItem(R.id.nav_carreras).isVisible = false
             nav_menu.findItem(R.id.nav_cursos).isVisible = false
@@ -103,6 +117,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         else if(usuario.rol == "estudiante"){
             nav_menu.findItem(R.id.nav_home).isVisible = false
+            nav_menu.findItem(R.id.nav_informacion).isVisible = true
             nav_menu.findItem(R.id.nav_ciclos).isVisible = false
             nav_menu.findItem(R.id.nav_carreras).isVisible = false
             nav_menu.findItem(R.id.nav_cursos).isVisible = false
