@@ -69,7 +69,7 @@ class ProfesoresFragment : Fragment() {
             @Override
             override fun onChanged(@Nullable ciclos: List<Profesor>?) {
                 listaProfesores = ciclos as ArrayList<Profesor>
-                updateView()
+                if(listaProfesores.isNotEmpty()) updateView()
             }
         }
         profesoresLiveData!!.observe(this, ciclo)

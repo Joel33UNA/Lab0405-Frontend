@@ -51,7 +51,7 @@ class CursosFragment : Fragment() {
             @Override
             override fun onChanged(@Nullable cursos: List<Curso>?) {
                 listaCursos = cursos as ArrayList<Curso>
-                updateView()
+                if(listaCursos.isNotEmpty()) updateView()
             }
         }
         cursosLiveData!!.observe(this, curso)

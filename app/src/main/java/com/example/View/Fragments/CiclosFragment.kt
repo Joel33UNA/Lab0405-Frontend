@@ -51,7 +51,7 @@ class CiclosFragment : Fragment() {
             @Override
             override fun onChanged(@Nullable ciclos: List<Ciclo>?) {
                 listaCiclos = ciclos as ArrayList<Ciclo>
-                updateView()
+                if(listaCiclos.isNotEmpty()) updateView()
             }
         }
         ciclosLiveData!!.observe(this, ciclo)

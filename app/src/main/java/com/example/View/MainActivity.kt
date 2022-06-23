@@ -78,6 +78,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 changeFragment(MatriculasFragment())
                 setToolbarTitle("Matriculas")
             }
+            R.id.nav_oferta_academica -> {
+                changeFragment(MatriculasFragment()) // CAMBIAR
+                setToolbarTitle("Oferta académica")
+            }
             R.id.nav_logout -> {
                 val i = Intent(this, LoginActivity::class.java)
                 startActivity(i)
